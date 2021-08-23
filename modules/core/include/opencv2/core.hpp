@@ -59,40 +59,41 @@
 #include "opencv2/core/persistence.hpp"
 
 /**
-@defgroup core Core functionality
+ * doxygen的一些标志，用于生成文档
+@defgroup core Core functionality 0.核心功能（总览介绍）
 @{
-    @defgroup core_basic Basic structures
-    @defgroup core_c C structures and operations
+    @defgroup core_basic Basic structures           1.基本结构
+    @defgroup core_c C structures and operations    2.结构与操作
     @{
-        @defgroup core_c_glue Connections with C++
+        @defgroup core_c_glue Connections with C++      2.1与c++的连接
     @}
-    @defgroup core_array Operations on arrays
-    @defgroup core_async Asynchronous API
-    @defgroup core_xml XML/YAML Persistence
-    @defgroup core_cluster Clustering
-    @defgroup core_utils Utility and system functions and macros
+    @defgroup core_array Operations on arrays       3.对数组的操作
+    @defgroup core_async Asynchronous API           4.异步API
+    @defgroup core_xml XML/YAML Persistence         5.XML/YAML
+    @defgroup core_cluster Clustering               6.聚类
+    @defgroup core_utils Utility and system functions and macros 7.工具及系统函数和宏
     @{
-        @defgroup core_logging Logging facilities
-        @defgroup core_utils_sse SSE utilities
-        @defgroup core_utils_neon NEON utilities
-        @defgroup core_utils_vsx VSX utilities
-        @defgroup core_utils_softfloat Softfloat support
-        @defgroup core_utils_samples Utility functions for OpenCV samples
+        @defgroup core_logging Logging facilities       7.1 日志
+        @defgroup core_utils_sse SSE utilities          7.2 SSE指令集
+        @defgroup core_utils_neon NEON utilities        7.3 NEON(ARM)指令集（Cortex-A系列处理器的一种128位SIMD）
+        @defgroup core_utils_vsx VSX utilities          7.4 VSX工具，难道是VS Extention?
+        @defgroup core_utils_softfloat Softfloat support    7.5 softfloat支持（用软件模拟出float，用位运算来模拟浮点运算）
+        @defgroup core_utils_samples Utility functions for OpenCV samples   7.6 OpenCV示例代码的工具函数
     @}
-    @defgroup core_opengl OpenGL interoperability
-    @defgroup core_ipp Intel IPP Asynchronous C/C++ Converters
-    @defgroup core_optim Optimization Algorithms
-    @defgroup core_directx DirectX interoperability
-    @defgroup core_eigen Eigen support
-    @defgroup core_opencl OpenCL support
-    @defgroup core_va_intel Intel VA-API/OpenCL (CL-VA) interoperability
-    @defgroup core_hal Hardware Acceleration Layer
+    @defgroup core_opengl OpenGL interoperability   8.OpenGL交互
+    @defgroup core_ipp Intel IPP Asynchronous C/C++ Converters  9.英特尔 IPP 异步 C/C++ 转换器
+    @defgroup core_optim Optimization Algorithms    10.优化算法
+    @defgroup core_directx DirectX interoperability 11.DirectX交互
+    @defgroup core_eigen Eigen support              12.Eigen线性代数算法库
+    @defgroup core_opencl OpenCL support            13.OpenCL（open computing language）支持
+    @defgroup core_va_intel Intel VA-API/OpenCL (CL-VA) interoperability    14.英特尔 VA-API/OpenCL (CL-VA) 交互
+    @defgroup core_hal Hardware Acceleration Layer  15.硬件加速层
     @{
-        @defgroup core_hal_functions Functions
-        @defgroup core_hal_interface Interface
-        @defgroup core_hal_intrin Universal intrinsics
+        @defgroup core_hal_functions Functions  15.1 硬件加速函数
+        @defgroup core_hal_interface Interface  15.2 硬件加速接口
+        @defgroup core_hal_intrin Universal intrinsics  15.3 硬件加速通用功能/内部函数
         @{
-            @defgroup core_hal_intrin_impl Private implementation helpers
+            @defgroup core_hal_intrin_impl Private implementation helpers   15.3.1 通用功能/内部函数的私有实现
         @}
     @}
 @}
@@ -100,7 +101,7 @@
 
 namespace cv {
 
-//! @addtogroup core_utils
+//! @addtogroup core_utils 7.工具及系统函数和宏
 //! @{
 
 /*! @brief Class passed to an error.
@@ -108,6 +109,7 @@ namespace cv {
 This class encapsulates all or almost all necessary
 information about the error happened in the program. The exception is
 usually constructed and thrown implicitly via CV_Error and CV_Error_ macros.
+这个类封装了所有或几乎所有关于程序中发生的错误的必要信息。异常通常是通过 CV_Error 和 CV_Error_ 宏隐式构造和抛出的。
 @see error
  */
 class CV_EXPORTS Exception : public std::exception
@@ -120,12 +122,13 @@ public:
     /*!
      Full constructor. Normally the constructor is not called explicitly.
      Instead, the macros CV_Error(), CV_Error_() and CV_Assert() are used.
+     完整的构造函数。通常不会显式调用构造函数。相反，使用宏 CV_Error()、CV_Error_() 和 CV_Assert()。
     */
     Exception(int _code, const String& _err, const String& _func, const String& _file, int _line);
     virtual ~Exception() throw();
 
     /*!
-     \return the error description and the context as a text string.
+     \return the error description and the context as a text string.返回错误描述和上下文作为文本字符串
     */
     virtual const char *what() const throw() CV_OVERRIDE;
     void formatMessage();
@@ -139,22 +142,24 @@ public:
     int line; ///< line number in the source file where the error has occurred
 };
 
-/*! @brief Signals an error and raises the exception.
+/*! @brief Signals an error and raises the exception.发出错误信号并引发异常。
 
 By default the function prints information about the error to stderr,
 then it either stops if cv::setBreakOnError() had been called before or raises the exception.
 It is possible to alternate error processing by using #redirectError().
+默认情况下，该函数将有关错误的信息打印到 stderr，
+然后如果 cv::setBreakOnError() 之前已被调用，则它会停止或引发异常。可以使用 #redirectError() 来交替错误处理。
 @param exc the exception raisen.
-@deprecated drop this version
+@deprecated drop this version 放弃这个版本
  */
 CV_EXPORTS void error( const Exception& exc );
 
-enum SortFlags { SORT_EVERY_ROW    = 0, //!< each matrix row is sorted independently
+enum SortFlags { SORT_EVERY_ROW    = 0, //!< each matrix row is sorted independently 每个矩阵行独立排序
                  SORT_EVERY_COLUMN = 1, //!< each matrix column is sorted
                                         //!< independently; this flag and the previous one are
-                                        //!< mutually exclusive.
+                                        //!< mutually exclusive. 每个矩阵列独立排序，这个标志和前一个是互斥的。
                  SORT_ASCENDING    = 0, //!< each matrix row is sorted in the ascending
-                                        //!< order.
+                                        //!< order.每个矩阵的行按升序排列
                  SORT_DESCENDING   = 16 //!< each matrix row is sorted in the
                                         //!< descending order; this flag and the previous one are also
                                         //!< mutually exclusive.
@@ -162,10 +167,10 @@ enum SortFlags { SORT_EVERY_ROW    = 0, //!< each matrix row is sorted independe
 
 //! @} core_utils
 
-//! @addtogroup core
+//! @addtogroup core 0.core.核心
 //! @{
 
-//! Covariation flags
+//! Covariation flags 协变标志
 enum CovarFlags {
     /** The output covariance matrix is calculated as:
        \f[\texttt{scale}   \cdot  [  \texttt{vects}  [0]-  \texttt{mean}  , \texttt{vects}  [1]-  \texttt{mean}  ,...]^T  \cdot  [ \texttt{vects}  [0]- \texttt{mean}  , \texttt{vects}  [1]- \texttt{mean}  ,...],\f]
@@ -173,7 +178,10 @@ enum CovarFlags {
        for fast PCA of a set of very large vectors (see, for example, the EigenFaces technique for
        face recognition). Eigenvalues of this "scrambled" matrix match the eigenvalues of the true
        covariance matrix. The "true" eigenvectors can be easily calculated from the eigenvectors of
-       the "scrambled" covariance matrix. */
+       the "scrambled" covariance matrix.
+       协方差矩阵将为 nsamples x nsamples。这种不寻常的协方差矩阵用于对一组非常大的向量进行快速 PCA
+       （例如，参见用于人脸识别的 EigenFaces 技术）。这个“加扰”矩阵的特征值与真实协方差矩阵的特征值相匹配。
+       “真实”特征向量可以很容易地从“加扰”协方差矩阵的特征向量中计算出来。*/
     COVAR_SCRAMBLED = 0,
     /**The output covariance matrix is calculated as:
         \f[\texttt{scale}   \cdot  [  \texttt{vects}  [0]-  \texttt{mean}  , \texttt{vects}  [1]-  \texttt{mean}  ,...]  \cdot  [ \texttt{vects}  [0]- \texttt{mean}  , \texttt{vects}  [1]- \texttt{mean}  ,...]^T,\f]
@@ -201,12 +209,12 @@ enum CovarFlags {
     COVAR_COLS      = 16
 };
 
-//! @addtogroup core_cluster
+//! @addtogroup core_cluster 6.聚类。这里仅包含了一个k最近邻的enum
 //!  @{
 
 //! k-Means flags
 enum KmeansFlags {
-    /** Select random initial centers in each attempt.*/
+    /** Select random initial centers in each attempt.在每次尝试中选择随机初始中心*/
     KMEANS_RANDOM_CENTERS     = 0,
     /** Use kmeans++ center initialization by Arthur and Vassilvitskii [Arthur2007].*/
     KMEANS_PP_CENTERS         = 2,
@@ -240,7 +248,7 @@ enum HersheyFonts {
     FONT_ITALIC                 = 16 //!< flag for italic font
 };
 
-//! @addtogroup core_array
+//! @addtogroup core_array 3.对数组的操作
 //! @{
 
 enum ReduceTypes { REDUCE_SUM = 0, //!< the output is the sum of all rows/columns of the matrix.
@@ -251,7 +259,7 @@ enum ReduceTypes { REDUCE_SUM = 0, //!< the output is the sum of all rows/column
 
 //! @} core_array
 
-/** @brief Swaps two matrices
+/** @brief Swaps two matrices 0.core.交换两个矩阵
 */
 CV_EXPORTS void swap(Mat& a, Mat& b);
 /** @overload */
@@ -712,7 +720,7 @@ CV_EXPORTS_W double norm(InputArray src1, InputArray src2,
 */
 CV_EXPORTS double norm( const SparseMat& src, int normType );
 
-/** @brief Computes the Peak Signal-to-Noise Ratio (PSNR) image quality metric.
+/** @brief Computes the Peak Signal-to-Noise Ratio (PSNR) image quality metric.计算峰值信噪比 (PSNR) 图像质量指标。
 
 This function calculates the Peak Signal-to-Noise Ratio (PSNR) image quality metric in decibels (dB), between two input arrays src1 and src2. Arrays must have depth CV_8U.
 
@@ -730,7 +738,7 @@ where R is the maximum integer value of depth CV_8U (255) and MSE is the mean sq
   */
 CV_EXPORTS_W double PSNR(InputArray src1, InputArray src2);
 
-/** @brief naive nearest neighbor finder
+/** @brief naive nearest neighbor finder 朴素的最近邻查找器
 
 see http://en.wikipedia.org/wiki/Nearest_neighbor_search
 @todo document
@@ -741,7 +749,7 @@ CV_EXPORTS_W void batchDistance(InputArray src1, InputArray src2,
                                 InputArray mask = noArray(), int update = 0,
                                 bool crosscheck = false);
 
-/** @brief Normalizes the norm or value range of an array.
+/** @brief Normalizes the norm or value range of an array. 规范化数组的范数或值范围。
 
 The function cv::normalize normalizes scale and shift the input array elements so that
 \f[\| \texttt{dst} \| _{L_p}= \texttt{alpha}\f]

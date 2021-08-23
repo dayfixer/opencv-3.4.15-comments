@@ -63,10 +63,10 @@
 namespace cv
 {
 
-//! @addtogroup core_utils
+//! @addtogroup core_utils 7.工具及系统函数和宏
 //! @{
 
-/** @brief  Automatically Allocated Buffer Class
+/** @brief  Automatically Allocated Buffer Class 自动分配的缓冲区类
 
  The class is used for temporary buffers in functions and methods.
  If a temporary buffer is usually small (a few K's of memory),
@@ -148,10 +148,11 @@ protected:
     _Tp buf[(fixed_size > 0) ? fixed_size : 1];
 };
 
-/**  @brief Sets/resets the break-on-error mode.
+/**  @brief Sets/resets the break-on-error mode. 设置/重置错误中断模式。
 
 When the break-on-error mode is set, the default error handler issues a hardware exception, which
 can make debugging more convenient.
+当设置了 break-on-error 模式时，默认的错误处理程序会发出硬件异常，这可以使调试更加方便。
 
 \return the previous state
  */
@@ -162,7 +163,7 @@ extern "C" typedef int (*ErrorCallback)( int status, const char* func_name,
                                        int line, void* userdata );
 
 
-/** @brief Sets the new error handler and the optional user data.
+/** @brief Sets the new error handler and the optional user data.设置新的错误处理程序和可选的用户数据。
 
   The function sets the new error handler, called from cv::error().
 
@@ -178,6 +179,7 @@ CV_EXPORTS String tempfile( const char* suffix = 0);
 CV_EXPORTS void glob(String pattern, std::vector<String>& result, bool recursive = false);
 
 /** @brief OpenCV will try to set the number of threads for the next parallel region.
+ * OpenCV 将尝试为下一个并行区域设置线程数。
 
 If threads == 0, OpenCV will disable threading optimizations and run all it's functions
 sequentially. Passing threads \< 0 will reset threads number to system default. This function must
@@ -198,6 +200,7 @@ framework:
 CV_EXPORTS_W void setNumThreads(int nthreads);
 
 /** @brief Returns the number of threads used by OpenCV for parallel regions.
+ * 返回 OpenCV 用于并行区域的线程数。
 
 Always returns 1 if OpenCV is built without threading support.
 
@@ -217,8 +220,10 @@ CV_EXPORTS_W int getNumThreads();
 
 /** @brief Returns the index of the currently executed thread within the current parallel region. Always
 returns 0 if called outside of parallel region.
+ * 返回当前并行区域内当前执行线程的索引。如果在并行区域之外调用，则始终返回 0。
 
 @deprecated Current implementation doesn't corresponding to this documentation.
+ * 当前实现与本文档不对应。
 
 The exact meaning of the return value depends on the threading framework used by OpenCV library:
 - `TBB` - Unsupported with current 4.1 TBB release. Maybe will be supported in future.
@@ -256,7 +261,7 @@ CV_EXPORTS_W int getVersionMinor();
 /** @brief Returns revision field of the library version */
 CV_EXPORTS_W int getVersionRevision();
 
-/** @brief Returns the number of ticks.
+/** @brief Returns the number of ticks. 返回刻度数。
 
 The function returns the number of ticks after the certain event (for example, when the machine was
 turned on). It can be used to initialize RNG or to measure a function execution time by reading the
@@ -565,9 +570,9 @@ CV_EXPORTS_W bool useOptimized();
 
 static inline size_t getElemSize(int type) { return (size_t)CV_ELEM_SIZE(type); }
 
-/////////////////////////////// Parallel Primitives //////////////////////////////////
+/////////////////////////////// Parallel Primitives 并行原语 //////////////////////////////////
 
-/** @brief Base class for parallel data processors
+/** @brief Base class for parallel data processors 并行数据处理器的基类（接口）
 */
 class CV_EXPORTS ParallelLoopBody
 {
@@ -700,7 +705,7 @@ void Mat::forEach_impl(const Functor& operation) {
     parallel_for_(cv::Range(0, LINES), PixelOperationWrapper(reinterpret_cast<Mat_<_Tp>*>(this), operation));
 }
 
-/////////////////////////// Synchronization Primitives ///////////////////////////////
+/////////////////////////// Synchronization Primitives 同步原语 ///////////////////////////////
 
 class CV_EXPORTS Mutex
 {
@@ -719,6 +724,7 @@ protected:
     Impl* impl;
 };
 
+// 互斥锁
 class CV_EXPORTS AutoLock
 {
 public:
@@ -732,7 +738,7 @@ private:
 };
 
 
-/** @brief Designed for command line parsing
+/** @brief Designed for command line parsing 专为命令行解析而设计
 
 The sample below demonstrates how to use CommandLineParser:
 @code
@@ -960,7 +966,7 @@ protected:
 
 //! @cond IGNORED
 
-/////////////////////////////// AutoBuffer implementation ////////////////////////////////////////
+/////////////////////////////// AutoBuffer implementation 自动缓冲实现 ////////////////////////////////////////
 
 template<typename _Tp, size_t fixed_size> inline
 AutoBuffer<_Tp, fixed_size>::AutoBuffer()
@@ -1153,13 +1159,13 @@ public:
 namespace samples {
 
 //! @addtogroup core_utils_samples
-// This section describes utility functions for OpenCV samples.
+// This section describes utility functions for OpenCV samples.本节介绍 OpenCV 示例的实用程序函数。
 //
-// @note Implementation of these utilities is not thread-safe.
+// @note Implementation of these utilities is not thread-safe. 这些实用程序的实现不是线程安全的。
 //
 //! @{
 
-/** @brief Try to find requested data file
+/** @brief Try to find requested data file 尝试查找请求的数据文件
 
 Search directories:
 

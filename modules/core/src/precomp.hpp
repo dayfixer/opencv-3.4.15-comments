@@ -374,7 +374,10 @@ bool __termination;  // skip some cleanups, because process is terminating
 
 cv::Mutex& getInitializationMutex();
 
-// TODO Memory barriers?
+// TODO Memory barriers?似乎不需要内存屏障，已经volatile了。
+// PS：多线程的情况下的Singleton需要确保只有一个，只
+// volatile的意思是让编译器每次操作该变量时一定要从内存中真正取出，而不是使用已经存在寄存器中的值
+// 此处为懒汉模式（类加载时不初始化）
 #define CV_SINGLETON_LAZY_INIT_(TYPE, INITIALIZER, RET_VALUE) \
     static TYPE* volatile instance = NULL; \
     if (instance == NULL) \

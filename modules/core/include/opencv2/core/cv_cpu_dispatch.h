@@ -2,6 +2,9 @@
 // It is subject to the license terms in the LICENSE file found in the top-level directory
 // of this distribution and at http://opencv.org/license.html.
 
+
+// cpu的dispath，用于加速，与baseline区别
+
 #if defined __OPENCV_BUILD \
 
 #include "cv_cpu_config.h"
@@ -29,21 +32,40 @@
     && !defined CV_DISABLE_OPTIMIZATION \
     && !defined __CUDACC__ /* do not include SSE/AVX/NEON headers for NVCC compiler */ \
 
+/*************
+ * mm for mmx, intrin for intrinsics(功能)
+<mmintrin.h> MMX
+<xmmintrin.h> SSE
+<emmintrin.h> SSE2
+<pmmintrin.h> SSE3
+<tmmintrin.h> SSSE3
+<smmintrin.h> SSE4.1
+<nmmintrin.h> SSE4.2
+<ammintrin.h> SSE4A
+<wmmintrin.h> AES
+<immintrin.h> AVX
+<zmmintrin.h> AVX512
+ * ******/
+
 #ifdef CV_CPU_COMPILE_SSE2
+// Willamette 新指令的主要头文件
 #  include <emmintrin.h>
 #  define CV_MMX 1
 #  define CV_SSE 1
 #  define CV_SSE2 1
 #endif
 #ifdef CV_CPU_COMPILE_SSE3
+// Intel(R) Pentium(R) 4 处理器 SSE3 的主要头文件
 #  include <pmmintrin.h>
 #  define CV_SSE3 1
 #endif
 #ifdef CV_CPU_COMPILE_SSSE3
+//
 #  include <tmmintrin.h>
 #  define CV_SSSE3 1
 #endif
 #ifdef CV_CPU_COMPILE_SSE4_1
+// Intel(R) Core(TM) 2 Duo 处理器的主要头文件
 #  include <smmintrin.h>
 #  define CV_SSE4_1 1
 #endif

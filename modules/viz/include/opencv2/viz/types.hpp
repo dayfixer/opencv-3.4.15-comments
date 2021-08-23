@@ -151,10 +151,11 @@ namespace cv
 
         };
 
-        /** @brief This class wraps intrinsic parameters of a camera. 此类包装相机的内在参数。
+        /** @brief This class wraps intrinsic parameters of a camera. 此类包装相机的内部参数。
 
         It provides several constructors that can extract the intrinsic parameters from field of
         view, intrinsic matrix and projection matrix. :
+        它提供了几个构造函数，可以从视场、内参矩阵和投影矩阵中提取内部参数（相机内参）。
          */
         class CV_EXPORTS Camera
         {

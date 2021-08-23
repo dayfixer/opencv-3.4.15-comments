@@ -48,7 +48,7 @@
 
 #include "opencv2/core/cvdef.h"
 
-//! @addtogroup core_utils_sse
+//! @addtogroup core_utils_sse  7.2 SSE指令集
 //! @{
 
 #if CV_SSE2
