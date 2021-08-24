@@ -50,6 +50,8 @@ The video stabilization module contains a set of functions and classes that can 
 problem of video stabilization. There are a few methods implemented, most of them are described in
 the papers @cite OF06 and @cite G11 . However, there are some extensions and deviations from the original
 paper methods.
+视频稳定模块包含一组可用于解决视频稳定问题的函数和类。
+实现了一些方法，其中大部分在@cite OF06 和@cite G11 论文中都有描述。但是，与原始论文方法有一些扩展和偏差。
 
 ### References
 

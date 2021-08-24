@@ -2,6 +2,8 @@
 // It is subject to the license terms in the LICENSE file found in the top-level directory
 // of this distribution and at http://opencv.org/license.html.
 
+// TBC: 似乎是跟踪用
+
 #ifndef OPENCV_TRACE_HPP
 #define OPENCV_TRACE_HPP
 
@@ -11,7 +13,7 @@ namespace cv {
 namespace utils {
 namespace trace {
 
-//! @addtogroup core_logging
+//! @addtogroup core_logging 7.1日志
 //! @{
 
 //! Macro to trace function
@@ -63,7 +65,7 @@ namespace details {
 # endif
 #endif
 
-//! Thread-local instance (usually allocated on stack)
+//! Thread-local instance (usually allocated on stack) 线程本地实例（通常在堆栈上分配）
 class CV_EXPORTS Region
 {
 public:

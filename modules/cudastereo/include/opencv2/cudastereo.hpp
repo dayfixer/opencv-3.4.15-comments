@@ -53,7 +53,7 @@
 /**
   @addtogroup cuda
   @{
-    @defgroup cudastereo Stereo Correspondence
+    @defgroup cudastereo Stereo Correspondence 立体匹配
   @}
  */
 

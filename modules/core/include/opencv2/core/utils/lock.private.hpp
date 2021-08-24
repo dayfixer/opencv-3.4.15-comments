@@ -9,6 +9,7 @@ namespace cv { namespace utils {
 
 
 /** @brief A simple scoped lock (RAII-style locking for exclusive/write access).
+ * 一个简单的作用域锁（用于排他/写访问的 RAII 式锁定）。
  *
  * Emulate std::lock_guard (C++11), partially std::unique_lock (C++11),
  */

@@ -59,11 +59,14 @@
 
   The Machine Learning Library (MLL) is a set of classes and functions for statistical
   classification, regression, and clustering of data.
+  机器学习库 (MLL) 是一组用于统计分类、回归和数据聚类的类和函数。
 
   Most of the classification and regression algorithms are implemented as C++ classes. As the
   algorithms have different sets of features (like an ability to handle missing measurements or
   categorical input variables), there is a little common ground between the classes. This common
   ground is defined by the class cv::ml::StatModel that all the other ML classes are derived from.
+  大多数分类和回归算法都是作为 C++ 类实现的。由于算法具有不同的特征集（例如处理缺失测量或分类输入变量的能力），
+  类之间有一些共同点。这个共同点由类 cv::ml::StatModel 定义，所有其他 ML 类都源自该类。
 
   See detailed overview here: @ref ml_intro.
  */

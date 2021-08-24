@@ -60,12 +60,14 @@
 
 
 /**
-@defgroup stitching Images stitching
+@defgroup stitching Images stitching 图片拼接
 
 This figure illustrates the stitching module pipeline implemented in the Stitcher class. Using that
 class it's possible to configure/remove some steps, i.e. adjust the stitching pipeline according to
 the particular needs. All building blocks from the pipeline are available in the detail namespace,
 one can combine and use them separately.
+此图说明了在 Stitcher 类中实现的拼接模块管道。使用该类可以配置/删除一些步骤，即根据特定需求调整拼接管道。
+管道中的所有构建块都可以在 detail 名称空间中使用，可以单独组合和使用它们。
 
 The implemented stitching pipeline is very similar to the one proposed in @cite BL07 .
 

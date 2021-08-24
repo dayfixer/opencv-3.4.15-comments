@@ -80,7 +80,7 @@ namespace cv
 
 namespace cv {
 
-//! @addtogroup core_utils
+//! @addtogroup core_utils 7.系统工具
 //! @{
 
 //////////////////////////// memory management functions ////////////////////////////
@@ -172,10 +172,13 @@ struct DefaultDeleter
 
 //! @endcond
 
-//! @addtogroup core_basic
+
+// 下面实现了std中的智能指针以及cv的String类
+
+//! @addtogroup core_basic 1.基本结构
 //! @{
 
-/** @brief Template class for smart pointers with shared ownership
+/** @brief Template class for smart pointers with shared ownership 具有共享所有权的智能指针的模板类
 
 A Ptr\<T\> pretends to be a pointer to an object of type T. Unlike an ordinary pointer, however, the
 object will be automatically cleaned up once all Ptr instances pointing to it are destroyed.

@@ -42,6 +42,8 @@
 //
 //M*/
 
+// 一些运算/操作，包括了SVD（奇异值分解）、RNG（随机数生成器）
+
 #ifndef OPENCV_CORE_OPERATIONS_HPP
 #define OPENCV_CORE_OPERATIONS_HPP
 
@@ -238,8 +240,8 @@ Matx<_Tp, n, l> Matx<_Tp, m, n>::solve(const Matx<_Tp, m, l>& rhs, int method) c
 }
 
 
-
 ////////////////////////// Augmenting algebraic & logical operations //////////////////////////
+//                             增强代数和逻辑运算
 
 #define CV_MAT_AUG_OPERATOR1(op, cvop, A, B) \
     static inline A& operator op (A& a, const B& b) { cvop; return a; }
@@ -460,7 +462,7 @@ int print(const Matx<_Tp, m, n>& matx, FILE* stream = stdout)
 //! @endcond
 
 /****************************************************************************************\
-*                                  Auxiliary algorithms                                  *
+*                         Auxiliary algorithms 辅助算法                                  *
 \****************************************************************************************/
 
 /** @brief Splits an element set into equivalency classes.

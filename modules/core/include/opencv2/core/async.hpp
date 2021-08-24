@@ -14,18 +14,19 @@
 
 namespace cv {
 
-/** @addtogroup core_async
+/** @addtogroup core_async 4.异步API
 
 @{
 */
 
 
-/** @brief Returns result of asynchronous operations
+/** @brief Returns result of asynchronous operations 返回异步操作的结果
 
 Object has attached asynchronous state.
 Assignment operator doesn't clone asynchronous state (it is shared between all instances).
+对象已附加异步状态。赋值运算符不克隆异步状态（它在所有实例之间共享）。
 
-Result can be fetched via get() method only once.
+Result can be fetched via get() method only once.结果只能通过 get() 方法获取一次。
 
 */
 class CV_EXPORTS_W AsyncArray

@@ -51,12 +51,12 @@
 namespace cv
 {
 
-//! @addtogroup core
+//! @addtogroup core 核心？
 //! @{
 
-    /** @brief Affine transform
+    /** @brief Affine transform 仿射变换
      *
-     * It represents a 4x4 homogeneous transformation matrix \f$T\f$
+     * It represents a 4x4 homogeneous transformation matrix 它表示一个 4x4 齐次变换矩阵 \f$T\f$
      *
      *  \f[T =
      *  \begin{bmatrix}
@@ -326,7 +326,7 @@ namespace cv
 //! @cond IGNORED
 
 ///////////////////////////////////////////////////////////////////////////////////
-// Implementation
+// Implementation 实现
 
 template<typename T> inline
 cv::Affine3<T>::Affine3()

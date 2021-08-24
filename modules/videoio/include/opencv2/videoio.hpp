@@ -49,6 +49,7 @@
   @defgroup videoio Video I/O
 
   @brief Read and write video or images sequence with OpenCV
+    使用 OpenCV 读写视频或图像序列
 
   ### See also:
   - @ref videoio_overview

@@ -47,9 +47,9 @@
 #include "opencv2/imgproc.hpp"
 
 /**
-@defgroup photo Computational Photography
+@defgroup photo Computational Photography 计算摄影
 
-This module includes photo processing algorithms
+This module includes photo processing algorithms 该模块包括照片处理算法
 @{
     @defgroup photo_inpaint Inpainting
     @defgroup photo_denoise Denoising

@@ -46,7 +46,7 @@
 #include "opencv2/core.hpp"
 
 /**
-  @defgroup imgcodecs Image file reading and writing
+  @defgroup imgcodecs Image file reading and writing 图像文件读写
   @{
     @defgroup imgcodecs_c C API
     @defgroup imgcodecs_flags Flags used for image file reading and writing

@@ -46,12 +46,12 @@
 #include "opencv2/core.hpp"
 
 /**
-  @defgroup imgproc Image Processing
+  @defgroup imgproc Image Processing 图像处理模块
 
 This module includes image-processing functions.
 
   @{
-    @defgroup imgproc_filter Image Filtering
+    @defgroup imgproc_filter Image Filtering 1.图像过滤
 
 Functions and classes described in this section are used to perform various linear or non-linear
 filtering operations on 2D images (represented as Mat's). It means that for each pixel location
@@ -83,7 +83,7 @@ CV_64F                    | -1/CV_64F
 
 @note when ddepth=-1, the output image will have the same depth as the source.
 
-    @defgroup imgproc_transform Geometric Image Transformations
+    @defgroup imgproc_transform Geometric Image Transformations 2.几何图像变化
 
 The functions in this section perform various geometrical transformations of 2D images. They do not
 change the image content but deform the pixel grid and map this deformed grid to the destination
@@ -122,8 +122,8 @@ resize for details.
 
 @note The geometrical transformations do not work with `CV_8S` or `CV_32S` images.
 
-    @defgroup imgproc_misc Miscellaneous Image Transformations
-    @defgroup imgproc_draw Drawing Functions
+    @defgroup imgproc_misc Miscellaneous Image Transformations 3.其它图像转换
+    @defgroup imgproc_draw Drawing Functions 4.绘图功能
 
 Drawing functions work with matrices/images of arbitrary depth. The boundaries of the shapes can be
 rendered with antialiasing (implemented only for 8-bit images for now). All the functions include
@@ -151,8 +151,8 @@ case, the color[3] is simply copied to the repainted pixels. Thus, if you want t
 semi-transparent shapes, you can paint them in a separate buffer and then blend it with the main
 image.
 
-    @defgroup imgproc_color_conversions Color Space Conversions
-    @defgroup imgproc_colormap ColorMaps in OpenCV
+    @defgroup imgproc_color_conversions Color Space Conversions 5.色彩空间转换
+    @defgroup imgproc_colormap ColorMaps in OpenCV 6.OpenCV中的色彩映射
 
 The human perception isn't built for observing fine changes in grayscale images. Human eyes are more
 sensitive to observing changes between colors, so you often need to recolor your grayscale images to
@@ -167,7 +167,7 @@ result:
 
 @see #ColormapTypes
 
-    @defgroup imgproc_subdiv2d Planar Subdivision
+    @defgroup imgproc_subdiv2d Planar Subdivision 7.平面细分
 
 The Subdiv2D class described in this section is used to perform various planar subdivision on
 a set of 2D points (represented as vector of Point2f). OpenCV subdivides a plane into triangles
@@ -180,16 +180,16 @@ diagram with red lines.
 The subdivisions can be used for the 3D piece-wise transformation of a plane, morphing, fast
 location of points on the plane, building special graphs (such as NNG,RNG), and so forth.
 
-    @defgroup imgproc_hist Histograms
-    @defgroup imgproc_shape Structural Analysis and Shape Descriptors
-    @defgroup imgproc_motion Motion Analysis and Object Tracking
-    @defgroup imgproc_feature Feature Detection
-    @defgroup imgproc_object Object Detection
-    @defgroup imgproc_c C API
-    @defgroup imgproc_hal Hardware Acceleration Layer
+    @defgroup imgproc_hist Histograms 8.直方图
+    @defgroup imgproc_shape Structural Analysis and Shape Descriptors 9.结构分析和形状描述符
+    @defgroup imgproc_motion Motion Analysis and Object Tracking 10.运动分析和对象跟踪
+    @defgroup imgproc_feature Feature Detection 11.特征检测
+    @defgroup imgproc_object Object  12.目标检测
+    @defgroup imgproc_c C API 13.C API
+    @defgroup imgproc_hal Hardware Acceleration Layer 14.硬件加速层
     @{
-        @defgroup imgproc_hal_functions Functions
-        @defgroup imgproc_hal_interface Interface
+        @defgroup imgproc_hal_functions Functions 14.1 函数
+        @defgroup imgproc_hal_interface Interface 14.2 接口
     @}
   @}
 */
@@ -1301,7 +1301,7 @@ CV_EXPORTS_W Ptr<LineSegmentDetector> createLineSegmentDetector(
 //! @addtogroup imgproc_filter
 //! @{
 
-/** @brief Returns Gaussian filter coefficients.
+/** @brief Returns Gaussian filter coefficients.返回高斯滤波器系数。
 
 The function computes and returns the \f$\texttt{ksize} \times 1\f$ matrix of Gaussian filter
 coefficients:
@@ -1322,6 +1322,7 @@ You may also use the higher-level GaussianBlur.
 CV_EXPORTS_W Mat getGaussianKernel( int ksize, double sigma, int ktype = CV_64F );
 
 /** @brief Returns filter coefficients for computing spatial image derivatives.
+ * 返回用于计算空间图像导数的滤波器系数。
 
 The function computes and returns the filter coefficients for spatial image derivatives. When
 `ksize=CV_SCHARR`, the Scharr \f$3 \times 3\f$ kernels are generated (see #Scharr). Otherwise, Sobel
@@ -1343,7 +1344,7 @@ CV_EXPORTS_W void getDerivKernels( OutputArray kx, OutputArray ky,
                                    int dx, int dy, int ksize,
                                    bool normalize = false, int ktype = CV_32F );
 
-/** @brief Returns Gabor filter coefficients.
+/** @brief Returns Gabor filter coefficients. 返回 Gabor 滤波器系数。
 
 For more details about gabor filter equations and parameters, see: [Gabor
 Filter](http://en.wikipedia.org/wiki/Gabor_filter).

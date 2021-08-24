@@ -53,22 +53,25 @@
 /**
   @defgroup features2d 2D Features Framework
   @{
-    @defgroup features2d_main Feature Detection and Description
-    @defgroup features2d_match Descriptor Matchers
+    @defgroup features2d_main Feature Detection and Description 1.特征检测与描述
+    @defgroup features2d_match Descriptor Matchers              2.描述匹配
 
 Matchers of keypoint descriptors in OpenCV have wrappers with a common interface that enables you to
 easily switch between different algorithms solving the same problem. This section is devoted to
 matching descriptors that are represented as vectors in a multidimensional space. All objects that
 implement vector descriptor matchers inherit the DescriptorMatcher interface.
+OpenCV 中关键点描述符的匹配器具有带有通用接口的包装器，使您可以轻松地在解决同一问题的不同算法之间切换。
+本节致力于匹配在多维空间中表示为向量的描述符。所有实现矢量描述符匹配器的对象都继承了 DescriptorMatcher 接口。
 
-    @defgroup features2d_draw Drawing Function of Keypoints and Matches
-    @defgroup features2d_category Object Categorization
+    @defgroup features2d_draw Drawing Function of Keypoints and Matches 3.关键点和匹配的绘制功能
+    @defgroup features2d_category Object Categorization                 4.对象分类
 
 This section describes approaches based on local 2D features and used to categorize objects.
+本节介绍基于局部 2D 特征并用于对对象进行分类的方法。
 
-    @defgroup feature2d_hal Hardware Acceleration Layer
+    @defgroup feature2d_hal Hardware Acceleration Layer 5.硬件加速层
     @{
-        @defgroup features2d_hal_interface Interface
+        @defgroup features2d_hal_interface Interface 5.1 接口
     @}
   @}
  */

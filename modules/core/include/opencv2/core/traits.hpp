@@ -51,10 +51,11 @@ namespace cv
 
 //#define OPENCV_TRAITS_ENABLE_DEPRECATED
 
-//! @addtogroup core_basic
+//! @addtogroup core_basic 1.基本结构
 //! @{
 
 /** @brief Template "trait" class for OpenCV primitive data types.
+    OpenCV 原始数据类型的模板“特征”类。、
 
 @note Deprecated. This is replaced by "single purpose" traits: traits::Type and traits::Depth
 

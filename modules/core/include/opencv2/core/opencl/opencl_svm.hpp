@@ -1,5 +1,7 @@
 /* See LICENSE file in the root OpenCV directory */
 
+// TBC: svm是support vector machine?
+
 #ifndef OPENCV_CORE_OPENCL_SVM_HPP
 #define OPENCV_CORE_OPENCL_SVM_HPP
 

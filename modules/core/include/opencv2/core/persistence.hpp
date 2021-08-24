@@ -106,16 +106,19 @@ typedef struct CvMatND CvMatND;
 
 namespace cv {
 
-/** @addtogroup core_xml
+/** @addtogroup core_xml 5.数据持久化
 
 XML/YAML/JSON file storages.     {#xml_storage}
 =======================
-Writing to a file storage.
+Writing to a file storage. 写文件
 --------------------------
 You can store and then restore various OpenCV data structures to/from XML (<http://www.w3c.org/XML>),
 YAML (<http://www.yaml.org>) or JSON (<http://www.json.org/>) formats. Also, it is possible to store
 and load arbitrarily complex data structures, which include OpenCV data structures, as well as
 primitive data types (integer and floating-point numbers and text strings) as their elements.
+您可以使用 XML、YAML或 JSON格式存储大部分的OpenCV数据结构
+此外，可以存储和加载任意复杂的数据结构，其中包括 OpenCV 数据结构以及原始数据类型（整数和浮点数以及文本字符串）作为其元素。
+
 
 Use the following procedure to write something to XML, YAML or JSON:
 -# Create new FileStorage and open it for writing. It can be done with a single call to

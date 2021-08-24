@@ -53,7 +53,7 @@
 /**
   @addtogroup cuda
   @{
-    @defgroup cudabgsegm Background Segmentation
+    @defgroup cudabgsegm Background Segmentation 背景分割
   @}
  */
 

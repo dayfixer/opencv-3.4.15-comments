@@ -41,6 +41,7 @@
 //
 //M*/
 
+// 使用Eigen
 
 #ifndef OPENCV_CORE_EIGEN_HPP
 #define OPENCV_CORE_EIGEN_HPP

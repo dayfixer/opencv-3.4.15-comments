@@ -7,6 +7,10 @@
 
 // OpenVX related definitions and declarations
 
+// OpenVX(maybe Open Vision accelaration/eXtension),khronos.org开源的跨平台计算机视觉应用加速库
+// OpenVX 支持性能和功耗优化的计算机视觉处理，在嵌入式和实时用例中尤其重要，例如面部、
+// 身体和手势跟踪、智能视频监控、高级驾驶辅助系统 (ADAS)、对象和场景重建、增强现实、目视检查、机器人技术等。
+
 #pragma once
 #ifndef OPENCV_OVX_DEFS_HPP
 #define OPENCV_OVX_DEFS_HPP

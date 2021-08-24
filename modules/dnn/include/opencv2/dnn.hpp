@@ -47,7 +47,7 @@
 // this header for future compatibility
 
 
-/** @defgroup dnn Deep Neural Network module
+/** @defgroup dnn Deep Neural Network module 深度神经网络模块
   @{
     This module contains:
         - API for new layers creation, layers are building bricks of neural networks;

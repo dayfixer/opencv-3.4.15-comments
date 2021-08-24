@@ -57,6 +57,8 @@
 #include "opencv2/core/cvstd.hpp"
 #include "opencv2/core/matx.hpp"
 
+// 一些特征类，包括：复数、点、矩形、旋转矩形、标量、termination criteria等等
+
 namespace cv
 {
 
@@ -109,6 +111,7 @@ public:
     typedef Vec<channel_type, channels> vec_type;
 };
 
+// 加入到命名空间traits中，包括Depth话Type（都包括value值）
 namespace traits {
 template<typename _Tp>
 struct Depth< Complex<_Tp> > { enum { value = Depth<_Tp>::value }; };

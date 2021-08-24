@@ -57,10 +57,12 @@
 #include <initializer_list>
 #endif
 
+// 似乎是mat.hpp文件的扩展，x for extension
+
 namespace cv
 {
 
-//! @addtogroup core_basic
+//! @addtogroup core_basic 1.基本结构
 //! @{
 
 ////////////////////////////// Small Matrix ///////////////////////////
@@ -77,6 +79,7 @@ struct CV_EXPORTS Matx_TOp { Matx_TOp() {} Matx_TOp(const Matx_TOp&) {} };
 //! @endcond
 
 /** @brief Template class for small matrices whose type and size are known at compilation time
+ 类型和大小在编译时已知的小矩阵的模板类
 
 If you need a more flexible type, use Mat . The elements of the matrix M are accessible using the
 M(i,j) notation. Most of the common matrix operations (see also @ref MatrixExpressions ) are
@@ -487,7 +490,7 @@ template<typename _Tp, int cn> static Vec<_Tp, cn> normalize(const Vec<_Tp, cn>&
 
 //! @cond IGNORED
 
-///////////////////////////////////// helper classes /////////////////////////////////////
+///////////////////////////////////// helper classes 帮助类 /////////////////////////////////////
 namespace internal
 {
 

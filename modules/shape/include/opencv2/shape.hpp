@@ -49,7 +49,7 @@
 #include "opencv2/shape/shape_distance.hpp"
 
 /**
-  @defgroup shape Shape Distance and Matching
+  @defgroup shape Shape Distance and Matching 形状距离和匹配
  */
 
 #endif

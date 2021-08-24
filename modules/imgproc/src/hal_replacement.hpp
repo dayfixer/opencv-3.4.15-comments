@@ -56,8 +56,10 @@
 #  pragma warning( disable: 4100 )
 #endif
 
-//! @addtogroup imgproc_hal_interface
-//! @note Define your functions to override default implementations:
+// 这个文件是一个使用硬件加速图像处理的 函数列表，需要自己实现响应硬件加速
+
+//! @addtogroup imgproc_hal_interface 图像处理—硬件接口
+//! @note Define your functions to override default implementations: 定义自己的函数覆盖默认实现
 //! @code
 //! #undef hal_add8u
 //! #define hal_add8u my_add8u
@@ -65,7 +67,7 @@
 //! @{
 
 /**
-@brief Dummy structure storing filtering context
+@brief Dummy structure storing filtering context 存储过滤上下文的虚拟结构
 
 Users can convert this pointer to any type they want. Initialisation and destruction should be made in Init and Free function implementations correspondingly.
 Example:

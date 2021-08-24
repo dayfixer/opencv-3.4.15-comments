@@ -11,12 +11,12 @@
 
 namespace cv {
 
-/** @addtogroup core_async
+/** @addtogroup core_async 4.异步API
 @{
 */
 
 
-/** @brief Provides result of asynchronous operations
+/** @brief Provides result of asynchronous operations 提供异步操作的结果
 
 */
 class CV_EXPORTS AsyncPromise

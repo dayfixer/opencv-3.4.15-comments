@@ -16,7 +16,7 @@ namespace cv {
 
 namespace details { class TlsStorage; }
 
-/** TLS container base implementation
+/** TLS container base implementation TLS(Transport Layer Security 传输层安全性协议)容器基础实现
  *
  * Don't use directly.
  *

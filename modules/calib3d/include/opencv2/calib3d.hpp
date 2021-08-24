@@ -49,7 +49,7 @@
 #include "opencv2/core/affine.hpp"
 
 /**
-  @defgroup calib3d Camera Calibration and 3D Reconstruction
+  @defgroup calib3d Camera Calibration and 3D Reconstruction 相机校准和 3D 重建
 
 The functions in this section use a so-called pinhole camera model. The view of a scene
 is obtained by projecting a scene's 3D point \f$P_w\f$ into the image plane using a perspective

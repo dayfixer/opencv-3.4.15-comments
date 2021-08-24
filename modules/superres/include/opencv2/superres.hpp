@@ -47,7 +47,7 @@
 #include "opencv2/superres/optical_flow.hpp"
 
 /**
-  @defgroup superres Super Resolution
+  @defgroup superres Super Resolution 超分辨率
 
 The Super Resolution module contains a set of functions and classes that can be used to solve the
 problem of resolution enhancement. There are a few methods implemented, most of them are described in

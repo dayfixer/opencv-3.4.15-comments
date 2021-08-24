@@ -48,12 +48,15 @@
 #include "opencv2/flann/flann_base.hpp"
 
 /**
-@defgroup flann Clustering and Search in Multi-Dimensional Spaces
+@defgroup flann Clustering and Search in Multi-Dimensional Spaces 多维空间中的聚类和搜索
 
 This section documents OpenCV's interface to the FLANN library. FLANN (Fast Library for Approximate
 Nearest Neighbors) is a library that contains a collection of algorithms optimized for fast nearest
 neighbor search in large datasets and for high dimensional features. More information about FLANN
 can be found in @cite Muja2009 .
+本节记录了 OpenCV 与 FLANN 库的接口。 FLANN (Fast Library for Approximate Nearest Neighbors)
+ 是一个包含一系列优化算法的库，这些算法针对大型数据集中的快速最近邻搜索和高维特征进行了优化。
+ 更多关于 FLANN 的信息可以在 @cite Muja2009 中找到。
 */
 
 namespace cvflann

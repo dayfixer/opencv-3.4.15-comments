@@ -5,7 +5,7 @@
 #ifndef OPENCV_LOGGER_DEFINES_HPP
 #define OPENCV_LOGGER_DEFINES_HPP
 
-//! @addtogroup core_logging
+//! @addtogroup core_logging 7.1日志
 //! @{
 
 // Supported logging levels and their semantic

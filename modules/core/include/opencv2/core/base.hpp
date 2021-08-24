@@ -60,7 +60,7 @@
 namespace cv
 {
 
-//! @addtogroup core_utils
+//! @addtogroup core_utils 1.基本结构
 //! @{
 
 namespace Error {
@@ -126,7 +126,7 @@ enum Code {
 
 //! @} core_utils
 
-//! @addtogroup core_array
+//! @addtogroup core_array 3.对数组的操作
 //! @{
 
 //! matrix decomposition types
@@ -280,7 +280,7 @@ enum BorderTypes {
 
 //! @} core_array
 
-//! @addtogroup core_utils
+//! @addtogroup core_utils 7.工具及系统函数和宏
 //! @{
 
 /*! @brief Signals an error and raises the exception.
@@ -425,6 +425,13 @@ configurations while CV_DbgAssert is only retained in the Debug configuration.
 #endif
 
 /*
+ * 汉明距离函子
+ * 汉明距离是使用在数据传输差错控制编码里面的，汉明距离是一个概念，它表示两个（相同长度）字对应位不同的数量，
+ * 我们以d（x,y）表示两个字x,y之间的汉明距离。对两个字符串进行异或运算，并统计结果为1的个数，那么这个数就是汉明距离。
+ * 如：
+ *      1011101 与 1001001 之间的汉明距离是 2。
+ *      2143896 与 2233796 之间的汉明距离是 3。
+ *      "toned" 与 "roses" 之间的汉明距离是 3。
  * Hamming distance functor - counts the bit differences between two strings - useful for the Brief descriptor
  * bit count of A exclusive XOR'ed with B
  */
@@ -441,7 +448,7 @@ struct CV_EXPORTS Hamming
 
 typedef Hamming HammingLUT;
 
-/////////////////////////////////// inline norms ////////////////////////////////////
+/////////////////////////////////// inline norms 内联范数 ////////////////////////////////////
 
 template<typename _Tp> inline _Tp cv_abs(_Tp x) { return std::abs(x); }
 inline int cv_abs(uchar x) { return x; }
@@ -578,7 +585,7 @@ _AccTp normInf(const _Tp* a, const _Tp* b, int n)
     return s;
 }
 
-/** @brief Computes the cube root of an argument.
+/** @brief Computes the cube root of an argument. 计算参数的立方根
 
  The function cubeRoot computes \f$\sqrt[3]{\texttt{val}}\f$. Negative arguments are handled correctly.
  NaN and Inf are not handled. The accuracy approaches the maximum possible accuracy for
@@ -602,7 +609,7 @@ double cubeRoot(double val)
 #endif
 }
 
-/** @brief Calculates the angle of a 2D vector in degrees.
+/** @brief Calculates the angle of a 2D vector in degrees. 以度为单位计算二维向量的角度
 
  The function fastAtan2 calculates the full-range angle of an input 2D vector. The angle is measured
  in degrees and varies from 0 to 360 degrees. The accuracy is about 0.3 degrees.
@@ -620,7 +627,7 @@ CV_EXPORTS bool Cholesky(float* A, size_t astep, int m, float* b, size_t bstep, 
 /** proxy for hal::Cholesky */
 CV_EXPORTS bool Cholesky(double* A, size_t astep, int m, double* b, size_t bstep, int n);
 
-////////////////// forward declarations for important OpenCV types //////////////////
+////////////////// forward declarations for important OpenCV types 重要类型的前向声明 //////////////////
 
 //! @cond IGNORED
 

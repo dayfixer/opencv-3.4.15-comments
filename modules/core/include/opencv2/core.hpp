@@ -59,24 +59,28 @@
 #include "opencv2/core/persistence.hpp"
 
 /**
- * doxygen的一些标志，用于生成文档
-@defgroup core Core functionality 0.核心功能（总览介绍）
+ * defgroup是doxygen的一些标志，用于生成文档
+@defgroup core Core functionality 核心功能
 @{
     @defgroup core_basic Basic structures           1.基本结构
+                    包括：一些基本的数据结构如Mat，并且实现了std中的string
     @defgroup core_c C structures and operations    2.结构与操作
     @{
         @defgroup core_c_glue Connections with C++      2.1与c++的连接
     @}
     @defgroup core_array Operations on arrays       3.对数组的操作
+                    包括：LDA（Linear Discriminant Analysis 线性判别分析）、PCA（Principal Component Analysis 主成分分析）
+                          RNG(Random Number Generator 随机数发生器)、SVD（Single Value Decomposition 奇异值分解）等类
+                          以及一些乱七八糟/很多的函数（最大最小、求和、比较、退化、随机数种子……）
     @defgroup core_async Asynchronous API           4.异步API
-    @defgroup core_xml XML/YAML Persistence         5.XML/YAML
+    @defgroup core_xml XML/YAML Persistence         5.数据持久化（xmal/yaml/json）
     @defgroup core_cluster Clustering               6.聚类
     @defgroup core_utils Utility and system functions and macros 7.工具及系统函数和宏
     @{
         @defgroup core_logging Logging facilities       7.1 日志
-        @defgroup core_utils_sse SSE utilities          7.2 SSE指令集
-        @defgroup core_utils_neon NEON utilities        7.3 NEON(ARM)指令集（Cortex-A系列处理器的一种128位SIMD）
-        @defgroup core_utils_vsx VSX utilities          7.4 VSX工具，难道是VS Extention?
+        @defgroup core_utils_sse SSE utilities          7.2 SSE指令集工具
+        @defgroup core_utils_neon NEON utilities        7.3 NEON(ARM)指令集工具（Cortex-A系列处理器的一种128位SIMD）
+        @defgroup core_utils_vsx VSX utilities          7.4 VSX指令集工具（VSX(Power7) for PowerPC (big-endian)）
         @defgroup core_utils_softfloat Softfloat support    7.5 softfloat支持（用软件模拟出float，用位运算来模拟浮点运算）
         @defgroup core_utils_samples Utility functions for OpenCV samples   7.6 OpenCV示例代码的工具函数
     @}
@@ -2974,7 +2978,7 @@ private:
 
 //! @} core_array
 
-//! @addtogroup core_cluster
+//! @addtogroup core_cluster 6.聚类（K最近邻）
 //!  @{
 
 /** @example samples/cpp/kmeans.cpp

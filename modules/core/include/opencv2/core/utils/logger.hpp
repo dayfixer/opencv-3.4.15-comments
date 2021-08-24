@@ -15,7 +15,7 @@ namespace cv {
 namespace utils {
 namespace logging {
 
-//! @addtogroup core_logging
+//! @addtogroup core_logging 7.1日志
 //! @{
 
 //! Supported logging levels and their semantic

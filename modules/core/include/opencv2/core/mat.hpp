@@ -60,7 +60,7 @@
 namespace cv
 {
 
-//! @addtogroup core_basic
+//! @addtogroup core_basic 1.基本结构
 //! @{
 
 enum { ACCESS_READ=1<<24, ACCESS_WRITE=1<<25,
@@ -73,6 +73,7 @@ class CV_EXPORTS _OutputArray;
 //////////////////////// Input/Output Array Arguments /////////////////////////////////
 
 /** @brief This is the proxy class for passing read-only input arrays into OpenCV functions.
+ *  这是将只读输入数组传递到 OpenCV 函数的代理类。
 
 It is defined as:
 @code
@@ -270,7 +271,7 @@ protected:
 
 
 /** @brief This type is very similar to InputArray except that it is used for input/output and output function
-parameters.
+parameters.这种类型与 InputArray 非常相似，只是它用于输入/输出和输出函数参数。
 
 Just like with InputArray, OpenCV users should not care about OutputArray, they just pass `Mat`,
 `vector<T>` etc. to the functions. The same limitation as for `InputArray`: *Do not explicitly
@@ -280,11 +281,15 @@ If you want to make your function polymorphic (i.e. accept different arrays as o
 it is also not very difficult. Take the sample above as the reference. Note that
 _OutputArray::create() needs to be called before _OutputArray::getMat(). This way you guarantee
 that the output array is properly allocated.
+如果你想让你的函数多态（即接受不同的数组作为输出参数），这也不是很困难。以上面的示例为参考。
+请注意，_OutputArray::create() 需要在 _OutputArray::getMat() 之前调用。这样您就可以保证正确分配输出数组。
 
 Optional output parameters. If you do not need certain output array to be computed and returned to
 you, pass cv::noArray(), just like you would in the case of optional input array. At the
 implementation level, use _OutputArray::needed() to check if certain output array needs to be
 computed or not.
+可选的输出参数。如果您不需要计算某些输出数组并将其返回给您，请传递 cv::noArray()，就像在可选输入数组的情况下一样。
+在实现层面，使用 _OutputArray::needed() 来检查是否需要计算某个输出数组。
 
 There are several synonyms for OutputArray that are used to assist automatic Python/Java/... wrapper
 generators:
@@ -456,7 +461,7 @@ typedef InputOutputArray InputOutputArrayOfArrays;
 
 CV_EXPORTS InputOutputArray noArray();
 
-/////////////////////////////////// MatAllocator //////////////////////////////////////
+/////////////////////////////////// MatAllocator Mat分配器 //////////////////////////////////////
 
 //! Usage flags for allocator
 enum UMatUsageFlags
@@ -613,6 +618,8 @@ protected:
 /** @example samples/cpp/cout_mat.cpp
 An example demonstrating the serial out capabilities of cv::Mat
 */
+
+// 最重要的Mat类
 
  /** @brief n-dimensional dense array class \anchor CVMat_Details
 

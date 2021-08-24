@@ -52,7 +52,7 @@
 /**
   @addtogroup cuda
   @{
-    @defgroup cudaoptflow Optical Flow
+    @defgroup cudaoptflow Optical Flow 光流
   @}
  */
 

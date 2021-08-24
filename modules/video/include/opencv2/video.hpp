@@ -45,7 +45,7 @@
 #define OPENCV_VIDEO_HPP
 
 /**
-  @defgroup video Video Analysis
+  @defgroup video Video Analysis 视频分析
   @{
     @defgroup video_motion Motion Analysis
     @defgroup video_track Object Tracking

@@ -53,7 +53,7 @@
 /**
   @addtogroup cuda
   @{
-    @defgroup cudawarping Image Warping
+    @defgroup cudawarping Image Warping 图像变形
   @}
  */
 
