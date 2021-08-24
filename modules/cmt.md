@@ -1,7 +1,8 @@
 已删除：java、js文件夹。
 原因：用不到。
 
-TBC: To be continued 未完待续
+标记:
+- TBC: To be continued 未完待续
 
 文件夹：
 - [ ] calib3d: Camera Calibration and 3D Reconstruction 相机校准和 3D 重建
@@ -46,3 +47,10 @@ TBC: To be continued 未完待续
 - [x] imgproc：图像处理
 - [ ] features2d：2D特征
 - [ ] objdetect：目标检测
+
+## 其它
+
+一些文件名中有`*.inl.hpp`的，是inl是inline的缩写
+一些文件名中有`*.inc.hpp`的，是inc是inclue的缩写
+一些文件名中有`*.dispatch.cpp`的，是相应指令集的函数写法
+一些文件名中有`*.simd.hpp`的，simd是simgle instrustion multipule data单指令多数据，应该是相应`*.dispatch.cpp`的头文件
