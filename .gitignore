@@ -1,4 +1,7 @@
 .idea
+.vscode
+build
+build-test
 
 # Prerequisites
 *.d
