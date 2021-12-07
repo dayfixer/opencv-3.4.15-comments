@@ -633,12 +633,15 @@ Mat imread( const String& filename, int flags )
     CV_TRACE_FUNCTION();
 
     /// create the basic container
+    // 创建一个临时对象，初始化成员数据
     Mat img;
 
     /// load the data
+    // 加载图像；除了LOAD_MAT还有LOAD_CVMAT、LOAD_IMAGE
     imread_( filename, flags, LOAD_MAT, &img );
 
     /// return a reference to the data
+    // 此处返回的是引用
     return img;
 }
 
