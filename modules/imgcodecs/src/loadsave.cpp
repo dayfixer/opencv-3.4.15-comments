@@ -122,6 +122,7 @@ protected:
  * @struct ImageCodecInitializer
  *
  * Container which stores the registered codecs to be used by OpenCV
+ * 存储 OpenCV 要使用的已注册编解码器的容器
 */
 struct ImageCodecInitializer
 {
@@ -198,6 +199,7 @@ ImageCodecInitializer& getCodecs()
 #else
     // C++98 doesn't guarantee correctness of multi-threaded initialization of static global variables
     // (memory leak here is not critical, use C++11 to avoid that)
+    // C++98 不保证静态全局变量的多线程初始化的正确性（此处的内存泄漏并不重要，请使用 C++11 来避免这种情况）
     static ImageCodecInitializer* g_codecs = new ImageCodecInitializer();
     return *g_codecs;
 #endif
@@ -394,6 +396,7 @@ imread_( const String& filename, int flags, int hdrtype, Mat* mat=0 )
         decoder = GdalDecoder().newDecoder();
     }else{
 #endif
+        // 寻找解码器
         decoder = findDecoder( filename );
 #ifdef HAVE_GDAL
     }
