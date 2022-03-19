@@ -642,6 +642,10 @@ SDKs, such as Numpy (ndarray), Win32 (independent device bitmaps), and others, t
 array that uses *steps* (or *strides*) to compute the position of a pixel. Due to this
 compatibility, it is possible to make a Mat header for user-allocated data and process it in-place
 using OpenCV functions.
+因此，Mat 中的数据布局与 OpenCV 1.x 中的 CvMat、IplImage 和 CvMatND 类型完全兼容。
+它还与标准工具包和 SDK 中的大多数密集数组类型兼容，例如 Numpy （ndarray）、Win32（独立设备位图）等，
+也就是说，它与任何使用 *步数*（或 *步幅*）来计算像素位置的数组兼容。
+由于这种兼容性，可以为用户分配的数据创建 Mat 标头，并使用 OpenCV 函数就地处理它。
 
 There are many different ways to create a Mat object. The most popular options are listed below:
 
